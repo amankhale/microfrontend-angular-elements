@@ -4,7 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Steps to create this project
 
-#### 1. Create a function `ngDoBootstrap` inside AppModule class and add following code inside it.
+#### 1. Install [`@angular/elements`](https://www.npmjs.com/package/@angular/elements) using following command.
+
+    ng add @angular/elements
+
+#### 2. Create a function `ngDoBootstrap` inside AppModule class and add following code inside it.
 
     export class AppModule {
 
@@ -16,17 +20,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         }
     }
 
-#### 2. Remove Bootstrap property from @NgModule metadata of AppModule.
+#### 3. Remove Bootstrap property from @NgModule metadata of AppModule.
 
-#### 3. Update angular.json file by changing "outpusHashing" to "none" for all build configurations
+#### 4. Update angular.json file by changing "outpusHashing" to "none" for all build configurations
 
-#### 4. Install [`concat`](https://www.npmjs.com/package/concat) package from npm to concat the javascript files generated from `ng build` command.
+#### 5. Install [`concat`](https://www.npmjs.com/package/concat) package from npm to concat the javascript files generated from `ng build` command.
 
     npm i concat
 
-#### 5. Create concat.js file outside `src` folder of the project that should be executed after the build is complete
+#### 6. Create concat.js file outside `src` folder of the project that should be executed after the build is complete
 
-#### 6. Add following code inside `concat.js` file to concat/merge all build files into one file.
+#### 7. Add following code inside `concat.js` file to concat/merge all build files into one file.
 
     const concat = require("concat");
 
@@ -40,15 +44,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         await concat(files, "./dist/angular-elements/elements.js");
     })();
 
-#### 7. Install `ts-node` package to run `contact.js` file.
+#### 8. Install `ts-node` package to run `contact.js` file.
 
     npm i ts-node
 
-#### 8. Update `package.json` file by adding a separate script for bundling
+#### 9. Update `package.json` file by adding a separate script for bundling
 
     "bundle": "ng build --configuration production && ts-node ./concat.js"
 
-#### 9. This script when executed will create a separate file called `elements.js` which then can be used inside any web development project along with its HTML tag `app-angular-elements`
+#### 10. This script when executed will create a separate file called `elements.js` which then can be used inside any web development project along with its HTML tag `app-angular-elements`
 
     <script src="./path_to_element.js/element.js" async>
 
