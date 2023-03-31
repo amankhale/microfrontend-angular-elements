@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 #### 3. Update angular.json file by changing "outpusHashing" to "none" for all build configurations
 
-#### 4. Install `concat` package from npm to concat the javascript files generated from `ng build` command.
+#### 4. Install [`concat`](https://www.npmjs.com/package/concat) package from npm to concat the javascript files generated from `ng build` command.
 
     npm i concat
 
